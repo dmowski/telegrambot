@@ -1,12 +1,20 @@
 
 const TelegramBot = require('node-telegram-bot-api');
-const openai = require('openai');
+const { Configuration, OpenAIApi }  = require('openai');
+
+const openAiSecretKey = process.env.OPEN_AI_KEY;
+
+const configuration = new Configuration({
+  apiKey: openAiSecretKey,
+});
+const openai = new OpenAIApi(configuration);
+
 
 // Создаем экземпляр бота и указываем токен, полученный у BotFather
 const bot = new TelegramBot(process.env.BOT_API_TOKEN, {polling: true});
 
 // Указываем токен OpenAI API и ID модели
-openai.apiKey =process.env.OPEN_AI_KEY ;
+
 const modelId = 'text-davinci-003';
 
 // Обрабатываем все сообщения
