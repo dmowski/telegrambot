@@ -25,12 +25,9 @@ bot.on('message', async (msg) => {
     // Извлекаем текст сообщения
     const message = msg.text;
 
-    // Генерируем ответ с помощью 
-    
- 
     
    const response = await openai.createCompletion({
-    model:"davinci-003",
+    model: "text-davinci-003",
     prompt: message,
     temperature: 0,
     n: 1,
