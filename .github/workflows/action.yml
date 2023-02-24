@@ -1,5 +1,5 @@
 
-name: Run Node.js app on merge to master
+name: Run Bot
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
     - name: Install Dependencies
       run: npm install
       
-    - name: Build and Test
+    - name: Start bot
       env:
         BOT_API_TOKEN: ${{ secrets.BOT_API_TOKEN }}
         OPEN_AI_KEY: ${{ secrets.OPEN_AI_KEY }}
