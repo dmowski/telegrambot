@@ -17,16 +17,22 @@ bot.on('message', async (msg) => {
     // Извлекаем текст сообщения
     const message = msg.text;
 
-    // Генерируем ответ с помощью OpenAI API
-    const response = await openai.completions.create({
-      engine: 'davinci',
-      prompt: message,
-      maxTokens: 150,
-      n: 1,
-      stop: ['\n', '.', '!', '?'],
-      temperature: 0.5
-    });
-
+    // Генерируем ответ с помощью 
+    
+ 
+    
+   const response = await openai.createCompletion({
+    model:davinci-003",
+    prompt: message,
+    temperature: 0,
+    n: 1,
+    stream: false,
+    presence_penalty: 0,
+    frequency_penalty: 0,
+    top_p: 1,
+    max_tokens: 1060,
+  });
+  
     // Отправляем ответное сообщение пользователю
     bot.sendMessage(chatId, response.choices[0].text);
   } catch (err) {
