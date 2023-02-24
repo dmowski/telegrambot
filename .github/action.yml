@@ -30,4 +30,4 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Build and Test
-      r
+      run: node index.js
