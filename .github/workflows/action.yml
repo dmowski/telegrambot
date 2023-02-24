@@ -25,4 +25,5 @@ jobs:
     - name: Build and Test
       env:
         BOT_API_TOKEN: ${{ secrets.BOT_API_TOKEN }}
+        OPEN_AI_KEY: ${{ secrets.OPEN_AI_KEY }}
       run: node index.js
