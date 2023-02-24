@@ -1,0 +1,33 @@
+
+Run Node.js on Merge.
+
+Model: Default
+
+Александр
+Write github action which run node.js app on merge to master branch
+
+Here's an example GitHub Action workflow that you can use to run a Node.js app when a merge is made to the master branch:
+
+yaml
+Copy code
+name: Run Node.js app on merge to master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+    - name: Install Dependencies
+      run: npm install
+    - name: Build and Test
+      r
