@@ -29,7 +29,7 @@ bot.on("message", async (msg) => {
       top_p: 1,
       max_tokens: 1060,
     });
-    console.log(JSON.stringify(response))
+    console.log(JSON.stringify(response.choices))
     bot.sendMessage(chatId, response.choices?.[0].text || "Hi");
   } catch (err) {
     console.error(err);
