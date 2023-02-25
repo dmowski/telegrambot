@@ -22,15 +22,6 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Wait prev
-      uses: actions/wait-for-status@v1
-      with:
-        checks: 'build'
-        ref: ${{ github.ref }}
-        owner: ${{ github.repository_owner }}
-        repo: ${{ github.repository }}
-        wait-for-completion: true
-
     - name: Start bot
       env:
         BOT_API_TOKEN: ${{ secrets.BOT_API_TOKEN }}
