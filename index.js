@@ -17,7 +17,7 @@ bot.on("message", async (msg) => {
 
   try {
     const message = msg.text;
-
+    console.log(message)
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: message,
@@ -29,7 +29,7 @@ bot.on("message", async (msg) => {
       top_p: 1,
       max_tokens: 1060,
     });
-
+    console.log(JSON.stringify(response))
     bot.sendMessage(chatId, response.choices?.[0].text || "Hi");
   } catch (err) {
     console.error(err);
